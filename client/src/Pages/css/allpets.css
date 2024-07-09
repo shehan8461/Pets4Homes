@@ -1,0 +1,65 @@
+.container {
+    max-width: 700px;
+    margin-left: 50%;
+  }
+  
+  .border {
+    border-color: #e5e7eb; /* Light gray border */
+  }
+  
+  .rounded-lg {
+    border-radius: 0.75rem; /* Larger border radius for rounded corners */
+  }
+  
+  .p-6 {
+    padding: 1.5rem; /* Generous padding for better spacing */
+  }
+  
+  .shadow-lg {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
+  }
+  
+  .text-center {
+    text-align: center; /* Center-aligned text */
+  }
+  
+  .text-4xl {
+    font-size: 2.25rem; /* Larger font size for the heading */
+  }
+  
+  .font-bold {
+    font-weight: 700; /* Bold font */
+  }
+  
+  .mb-8 {
+    margin-bottom: 2rem; /* Spacing below the heading */
+  }
+  
+  .flex {
+    display: flex; /* Flexbox layout */
+  }
+  
+  .flex-col {
+    flex-direction: column; /* Vertical stacking */
+  }
+  
+  .gap-6 {
+    gap: 1.5rem; /* Space between flex items */
+  }
+  
+  .text-2xl {
+    font-size: 1.5rem; /* Larger font size for pet name */
+  }
+  
+  .font-semibold {
+    font-weight: 600; /* Semi-bold font for labels */
+  }
+  
+  .mb-2 {
+    margin-bottom: 0.5rem; /* Spacing below the pet name */
+  }
+  
+  .text-xl {
+    font-size: 1.25rem; /* Larger font size for "no orders" message */
+  }
+  
