@@ -71,7 +71,7 @@ export default function ItemProfile() {
           prevOrders.filter((order) => order._id !== orderIdToDelete)
         );
       }
-      alert("Deleted successfully");
+      
       setShowModal(false);
     } catch (error) {
       console.log(error.message);
@@ -79,7 +79,7 @@ export default function ItemProfile() {
   };
 
   return (
-    <div className='table-auto overflow-x-scroll mx-auto p-3 scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-500'>
+    <div className='table-auto'>
       <h2 className='my-7 text-center font-semibold text-3xl'>Pet Details</h2>
 
       {orders.length > 0 ? (
@@ -91,7 +91,7 @@ export default function ItemProfile() {
             <Table.HeadCell>Age</Table.HeadCell>
             <Table.HeadCell>Gender</Table.HeadCell>
             <Table.HeadCell>Color</Table.HeadCell>
-            <Table.HeadCell>Weight</Table.HeadCell>    
+            <Table.HeadCell>Weight</Table.HeadCell>
             <Table.HeadCell>Price</Table.HeadCell>
             <Table.HeadCell>Photos</Table.HeadCell>
             <Table.HeadCell>Action</Table.HeadCell>
@@ -119,9 +119,9 @@ export default function ItemProfile() {
                 </Table.Cell>
                 <Table.Cell>
                   <Link to={`/update-item/${order._id}`}>
-                    <Button className="text-green-500"><b>Edit Item</b></Button>
+                    <Button id='edit-btn' className="text-green-500"><b>Edit Item</b></Button>
                   </Link>
-                  <Button className="text-red-500" onClick={() => {
+                  <Button id='delete-btn' className="text-red-500" onClick={() => {
                     setShowModal(true);
                     setOrderIdToDelete(order._id);
                   }}><b>Delete Order</b></Button>
@@ -137,11 +137,11 @@ export default function ItemProfile() {
       <Modal show={showModal} onClose={() => setShowModal(false)} popup size='md'>
         <Modal.Header />
         <Modal.Body>
-          <div className="text-center">
-            <HiOutlineExclamationCircle className="h-14 w-14 text-gray-400 dark:text-gray-200 mb-4 mx-auto" />
-            <h3 className="mb-5 text-lg text-gray-500 dark:text-gray-200">Are you sure you want to delete this order?</h3>
+          <div className="text-center-alert">
+            <HiOutlineExclamationCircle  />
+            <h3 >Are you sure you want to delete this order?</h3>
           </div>
-          <div className='flex justify-center gap-4'>
+          <div >
             <Button color='failure' onClick={handleDeleteOrder}>
               Yes, I am sure
             </Button>

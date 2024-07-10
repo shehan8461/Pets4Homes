@@ -1,3 +1,5 @@
+/* itemprofile.css */
+
 /* Container */
 .table-auto {
     width: 100%;
@@ -7,173 +9,254 @@
     background-color: #f9f9f9;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Scrollbar styling */
-.scrollbar {
+  }
+  
+  /* Scrollbar styling */
+  .scrollbar {
     scrollbar-width: thin;
     scrollbar-color: #ccc #f9f9f9;
-}
-
-.scrollbar::-webkit-scrollbar {
+  }
+  
+  .scrollbar::-webkit-scrollbar {
     width: 12px;
-}
-
-.scrollbar::-webkit-scrollbar-track {
+  }
+  
+  .scrollbar::-webkit-scrollbar-track {
     background: #f9f9f9;
-}
-
-.scrollbar::-webkit-scrollbar-thumb {
+  }
+  
+  .scrollbar::-webkit-scrollbar-thumb {
     background-color: #ccc;
     border-radius: 6px;
     border: 3px solid #f9f9f9;
-}
-
-.dark .scrollbar::-webkit-scrollbar-track {
+  }
+  
+  .dark .scrollbar::-webkit-scrollbar-track {
     background: #2d3748;
-}
-
-.dark .scrollbar::-webkit-scrollbar-thumb {
+  }
+  
+  .dark .scrollbar::-webkit-scrollbar-thumb {
     background-color: #4a5568;
     border: 3px solid #2d3748;
-}
-
-/* Title */
-h2 {
+  }
+  
+  /* Title */
+  h2 {
     margin: 20px 0;
     text-align: center;
     font-weight: 600;
     font-size: 24px;
     color: #333;
-}
-
-/* Table */
-.table-auto .shadow-md {
+  }
+  
+  /* Table */
+  .table-auto .shadow-md {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 100%;
-    
-}
-
-.table-auto th, .table-auto td {
+  }
+  
+  .table-auto th,
+  .table-auto td {
     padding: 12px 15px;
     text-align: left;
-    
-}
-
-.table-auto th {
+  }
+  
+  .table-auto th {
     background-color: #d3e2f1;
     font-weight: 600;
-    font-size: larger;
-}
-
-.table-auto td {
-    background-color: #aca9a9;
-    color: rgb(0, 0, 0);
-    font-size: large;
-}
-
-.table-auto tr {
-    border-bottom: 1px solid #e5e7eb;
-}
-
-.table-auto tr:nth-child(even) td {
-    background-color: #f9fafb;
-}
-
-.table-auto .bg-white {
-    background-color: #f1eaea;
-}
-
-.table-auto .dark\\:border-gray-700 {
+  }
+  
+  .table-auto td {
+    background-color: #f1f5f9;
+  }
+  
+  .table-auto tbody tr:nth-child(even) {
+    background-color: #e2e8f0;
+  }
+  
+  .table-auto .bg-white {
+    background-color: #ffffff;
+  }
+  
+  .table-auto .dark\:border-gray-700 {
     border-color: #4a5568;
-}
-
-.table-auto .dark\\:bg-gray-800 {
+  }
+  
+  .table-auto .dark\:bg-gray-800 {
     background-color: #2d3748;
-}
-
-.table-auto .divide-y > :not([hidden]) ~ :not([hidden]) {
-    border-color: #e5e7eb;
-}
-
-.dark .table-auto .divide-y > :not([hidden]) ~ :not([hidden]) {
-    border-color: #4a5568;
-}
-
-/* Action buttons */
-.table-auto .text-green-500 {
-    color: #38a169;
-}
-
-.table-auto .text-red-500 {
-    color: #e53e3e;
-}
-
-.table-auto .text-green-500:hover {
+  }
+  
+  /* Action buttons */
+  .table-auto .text-green-500,
+  .table-auto .text-red-500 {
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  .table-auto .text-green-500:hover {
     color: #2f855a;
-}
-
-.table-auto .text-red-500:hover {
+  }
+  
+  .table-auto .text-red-500:hover {
     color: #c53030;
-}
-
-/* Modal */
-.modal-content {
+  }
+  
+  /* Modal */
+  .modal-content {
     border-radius: 8px;
     padding: 20px;
     background-color: #ffffff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.modal-content .text-center {
+  }
+  
+  .modal-content .text-center {
     text-align: center;
-}
-
-.modal-content .text-gray-400 {
+  }
+  
+  .modal-content .text-gray-400 {
     color: #cbd5e0;
-}
-
-.modal-content .text-gray-500 {
+  }
+  
+  .modal-content .text-gray-500 {
     color: #6b7280;
-}
-
-.modal-content .dark\\:text-gray-200 {
+  }
+  
+  .modal-content .dark\:text-gray-200 {
     color: #e2e8f0;
-}
-
-.modal-content .text-lg {
+  }
+  
+  .modal-content .text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
-}
-
-.modal-content .flex {
+  }
+  
+  .modal-content .flex {
     display: flex;
     justify-content: center;
     gap: 1rem;
-}
-
-.modal-content button {
+  }
+  
+  .modal-content button {
     padding: 10px 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-}
-
-.modal-content button[color="failure"] {
+  }
+  
+  .modal-content button[color='failure'] {
     background-color: #e53e3e;
     color: #ffffff;
-}
-
-.modal-content button[color="failure"]:hover {
+  }
+  
+  .modal-content button[color='failure']:hover {
     background-color: #c53030;
-}
-
-.modal-content button[color="gray"] {
+  }
+  
+  .modal-content button[color='gray'] {
     background-color: #a0aec0;
     color: #ffffff;
-}
-
-.modal-content button[color="gray"]:hover {
+  }
+  
+  .modal-content button[color='gray']:hover {
     background-color: #718096;
-}
+  }
+  
+  /* Button Specific Styles */
+  #edit-btn,
+  #delete-btn {
+    padding: 5px 6px;
+    border-radius: 4px;
+    margin-left: 10px;
+    font-size: 14px;
+    transition: all 0.1s ease;
+  }
+  
+  #edit-btn {
+    background-color: #38a169;
+    color: #ffffff;
+  }
+  
+  #delete-btn {
+    background-color: #e53e3e;
+    color: #ffffff;
+  }
+  
+  #edit-btn:hover,
+  #delete-btn:hover {
+    opacity: 0.9;
+  }
+  /* Modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background-color: #ffffff;
+    width: 400px;
+    max-width: 90%;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .modal-body {
+    text-align: center;
+  }
+  
+  .modal-body .icon {
+    font-size: 36px;
+    color: #f44336; /* Red color for icon */
+  }
+  
+  .modal-body h3 {
+    margin-top: 15px;
+    font-size: 18px;
+  }
+  
+  .modal-footer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .modal-footer button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .modal-footer button[color="failure"] {
+    background-color: #f44336; /* Red color for delete button */
+    color: #ffffff;
+  }
+  
+  .modal-footer button[color="gray"] {
+    background-color: #ccc; /* Gray color for cancel button */
+    color: #000000;
+  }
+  
+  .modal-footer button:hover {
+    opacity: 0.8;
+  }
+  
