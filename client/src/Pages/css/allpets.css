@@ -1,65 +1,99 @@
 .container {
-    max-width: 700px;
-    margin-left: 50%;
-  }
-  
-  .border {
-    border-color: #e5e7eb; /* Light gray border */
-  }
-  
-  .rounded-lg {
-    border-radius: 0.75rem; /* Larger border radius for rounded corners */
-  }
-  
-  .p-6 {
-    padding: 1.5rem; /* Generous padding for better spacing */
-  }
-  
-  .shadow-lg {
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
-  }
-  
-  .text-center {
-    text-align: center; /* Center-aligned text */
-  }
-  
-  .text-4xl {
-    font-size: 2.25rem; /* Larger font size for the heading */
-  }
-  
-  .font-bold {
-    font-weight: 700; /* Bold font */
-  }
-  
-  .mb-8 {
-    margin-bottom: 2rem; /* Spacing below the heading */
-  }
-  
-  .flex {
-    display: flex; /* Flexbox layout */
-  }
-  
-  .flex-col {
-    flex-direction: column; /* Vertical stacking */
-  }
-  
-  .gap-6 {
-    gap: 1.5rem; /* Space between flex items */
-  }
-  
-  .text-2xl {
-    font-size: 1.5rem; /* Larger font size for pet name */
-  }
-  
-  .font-semibold {
-    font-weight: 600; /* Semi-bold font for labels */
-  }
-  
-  .mb-2 {
-    margin-bottom: 0.5rem; /* Spacing below the pet name */
-  }
-  
-  .text-xl {
-    font-size: 1.25rem; /* Larger font size for "no orders" message */
-  }
-  
+
+  margin: 0 auto; /* Center the container */
+}
+
+.border {
+  border-color: #e5e7eb; /* Light gray border */
+  border-style: solid;
+  width: 40%;
+margin-left: 50%;
+}
+
+.rounded-lg {
+  border-radius: 0.75rem; /* Larger border radius for rounded corners */
+}
+
+.p-6 {
+  padding: 1.5rem;
+  /* Generous padding for better spacing */
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
+}
+
+.text-center {
+  text-align: center; /* Center-aligned text */
+}
+
+.text-4xl {
+  font-size: 2.25rem; /* Larger font size for the heading */
+}
+
+.font-bold {
+  font-weight: 700; /* Bold font */
+}
+
+.mb-8 {
+  margin-bottom: 4rem; /* Spacing below the heading */
+}
+
+.flex {
+  display: flex; /* Flexbox layout */
+}
+
+.flex-col {
+  flex-direction: column; /* Vertical stacking */
+}
+
+.gap-6 {
+  gap: 1.9rem; /* Space between flex items */
+}
+
+.text-2xl {
+  font-size: 1.8rem;
+
+/* Larger font size for pet name */
+}
+
+.font-semibold {
+  font-weight: 600; /* Semi-bold font for labels */
+}
+
+.mb-2 {
+  margin-bottom: 1.9rem;
+  /* Spacing below the pet name */
+}
+
+.text-xl {
+  font-size: 1.35rem; /* Larger font size for "no orders" message */
+}
+
+/* New styles for image and details positioning */
+.image-container {
+  flex: 0 0 170px; /* Fixed width for the image container */
+}
+
+.image-container img {
+  width: 60%;
+  height: 50%;
+   /* Ensure the image covers the container */
+  border-radius: 0.75rem; /* Match the rounded corners */
+}
+
+.details-container {
+  flex: 1;
+  padding-left: 0rem; 
+  /* Space between image and details */
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* Center items vertically */
+  gap: 1.5rem; /* Space between image and details */
+}
+#rs{
+  color: orange;
+}

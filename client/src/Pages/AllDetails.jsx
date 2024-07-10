@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import './css/allpets.css'
 
 export default function AllDetails() {
   const [orders, setOrders] = useState([]);
@@ -26,21 +27,26 @@ export default function AllDetails() {
       <h2 className='text-center text-4xl font-bold mb-8'>Order History</h2>
       {orders.length > 0 ? (
         <div className='flex flex-col gap-6'>
-         
           {orders.map((order) => (
-             <Link to={`/onepet/${order._id}`}>
-            <div key={order.itemId} className='border rounded-lg p-6 shadow-lg'>
-              <p className='text-2xl font-bold mb-2'>{order.petname}</p>
-              <p><span className='font-semibold'>Species:</span> {order.species}</p>
-              <p><span className='font-semibold'>Breed:</span> {order.breed}</p>
-              <p><span className='font-semibold'>Age:</span> {order.age}</p>
-              <p><span className='font-semibold'>Gender:</span> {order.gender}</p>
-              <p><span className='font-semibold'>Color:</span> {order.color}</p>
-              <p><span className='font-semibold'>Weight:</span> {order.weight}</p>
-            </div>
+            <Link to={`/onepet/${order._id}`} key={order.itemId}>
+              <div className='border rounded-lg p-6 shadow-lg flex-row'>
+                <div className='image-container'>
+                  {order.profilePicture && (
+                    <img src={order.profilePicture} alt="Profile" />
+                  )}<br></br>
+                  {order.alternateProfilePicture && (
+                    <img src={order.alternateProfilePicture} alt="Alternate Profile" />
+                  )}
+                </div>
+                <div className='details-container'>
+                  <p className='text-2xl font-bold mb-2'>{order.petname}</p>
+                  <p id="rs"><span className='font-semibold' >Rs </span> {order.price}</p>
+      
+                
+                </div>
+              </div>
             </Link>
           ))}
-    
         </div>
       ) : (
         <p className='text-center text-xl'>You have no orders yet!</p>

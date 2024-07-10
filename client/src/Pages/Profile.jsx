@@ -123,7 +123,8 @@ export default function Profile() {
                 request.resource.size < 2 * 1024 * 1024 &&
                 request.resource.contentType.matches('image/.*')*/}
 
-      <img src={formData.profilePicture||currentUser.profilePicture} alt='profile' className='h-24 w-24 self-center cursor-pointer rounded-full object-cover'
+      <img src={formData.profilePicture||currentUser.profilePicture} alt='profile' className='h-24 w-24 self-center cursor-pointer object-cover border border-gray-300'
+
       onClick={()=>fileRef.current.click()}></img>
 
       <p className='text-sm self-center'>
