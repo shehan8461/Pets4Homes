@@ -4,6 +4,7 @@ import OAuth from '../components/OAuth';
 import { app } from '../firebase';
 import { useSelector } from 'react-redux';
 import { getStorage, uploadBytesResumable, ref, getDownloadURL } from 'firebase/storage';
+import './css/addpet.css';
 
 export default function AddItem() {
   const [imagePercent, setImagePercent] = useState(0);
@@ -27,7 +28,7 @@ export default function AddItem() {
     weight: "",
     profilePicture: "",
     alternateProfilePicture: "",
-    price:""
+    price: ""
   });
 
   useEffect(() => {
@@ -102,52 +103,52 @@ export default function AddItem() {
   };
 
   return (
-    <div className='p-3 max-w-lg mx-auto'>
-      <h1 className='text-3xl text-center font-semibold my-7'>Add Pet</h1>
-      <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
-        <input type="text" placeholder='Pet Name' id='petname' className='bg-slate-100 p-3 rounded-lg' onChange={(e) => setFormData({ ...formData, petname: e.target.value })} />
-        <input type="text" placeholder='Species' id='species' className='bg-slate-100 p-3 rounded-lg' onChange={(e) => setFormData({ ...formData, species: e.target.value })} />
-        <input type="text" placeholder='Breed' id='breed' className='bg-slate-100 p-3 rounded-lg' onChange={(e) => setFormData({ ...formData, breed: e.target.value })} />
-        <input type="text" placeholder='Age' id='age' className='bg-slate-100 p-3 rounded-lg' onChange={(e) => setFormData({ ...formData, age: e.target.value })} />
-        <input type="text" placeholder='Gender' id='gender' className='bg-slate-100 p-3 rounded-lg' onChange={(e) => setFormData({ ...formData, gender: e.target.value })} />
-        <input type="text" placeholder='Color' id='color' className='bg-slate-100 p-3 rounded-lg' onChange={(e) => setFormData({ ...formData, color: e.target.value })} />
-        <input type="text" placeholder='Weight' id='weight' className='bg-slate-100 p-3 rounded-lg' onChange={(e) => setFormData({ ...formData, weight: e.target.value })} />
-        <input type="text" placeholder='Price' id='price' className='bg-slate-100 p-3 rounded-lg' onChange={(e) => setFormData({ ...formData, price: e.target.value })} />
+    <div className="add-pet-container">
+      <h1>Add Pet</h1>
+      <form onSubmit={handleSubmit}>
+        <input type="text" placeholder='Pet Name' onChange={(e) => setFormData({ ...formData, petname: e.target.value })} />
+        <input type="text" placeholder='Species' onChange={(e) => setFormData({ ...formData, species: e.target.value })} />
+        <input type="text" placeholder='Breed' onChange={(e) => setFormData({ ...formData, breed: e.target.value })} />
+        <input type="text" placeholder='Age' onChange={(e) => setFormData({ ...formData, age: e.target.value })} />
+        <input type="text" placeholder='Gender' onChange={(e) => setFormData({ ...formData, gender: e.target.value })} />
+        <input type="text" placeholder='Color' onChange={(e) => setFormData({ ...formData, color: e.target.value })} />
+        <input type="text" placeholder='Weight' onChange={(e) => setFormData({ ...formData, weight: e.target.value })} />
+        <input type="text" placeholder='Price' onChange={(e) => setFormData({ ...formData, price: e.target.value })} />
 
         <input type='file' ref={fileRef1} id='profilePicture' hidden accept='image/*' onChange={(e) => setImage1(e.target.files[0])} />
         <input type='file' ref={fileRef2} id='alternateProfilePicture' hidden accept='image/*' onChange={(e) => setImage2(e.target.files[0])} />
 
-        <div className='flex justify-center items-center gap-4'>
-          <button type="button" onClick={handleImage1Click} className="cursor-pointer bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        <div>
+          <button className="upload-button" type="button" onClick={handleImage1Click}>
             Upload Profile Picture
           </button>
-          <button type="button" onClick={handleImage2Click} className="cursor-pointer bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          <button className="upload-button" type="button" onClick={handleImage2Click}>
             Upload Alternate Profile Picture
           </button>
         </div>
 
-        <div className='flex justify-center items-center gap-4'>
-          <img src={formData.profilePicture || 'https://media.istockphoto.com/id/1294866141/vector/picture-reload.jpg?s=612x612&w=is&k=20&c=Ei6q4n6VkP3B0R30d1VdZ4i11CFbyaEoAFy6_WEbArE='} alt='Profile' className='h-20 w-20 self-center cursor-pointer object-cover border border-gray-300' onClick={handleImage1Click} />
-          <img src={formData.alternateProfilePicture || 'https://media.istockphoto.com/id/1294866141/vector/picture-reload.jpg?s=612x612&w=is&k=20&c=Ei6q4n6VkP3B0R30d1VdZ4i11CFbyaEoAFy6_WEbArE='} alt='Alternate Profile' className='h-20 w-20 self-center cursor-pointer object-cover border border-gray-300' onClick={handleImage2Click} />
+        <div>
+          <img src={formData.profilePicture || 'https://media.istockphoto.com/id/1294866141/vector/picture-reload.jpg?s=612x612&w=is&k=20&c=Ei6q4n6VkP3B0R30d1VdZ4i11CFbyaEoAFy6_WEbArE='} alt='Profile' onClick={handleImage1Click} />
+          <img src={formData.alternateProfilePicture || 'https://media.istockphoto.com/id/1294866141/vector/picture-reload.jpg?s=612x612&w=is&k=20&c=Ei6q4n6VkP3B0R30d1VdZ4i11CFbyaEoAFy6_WEbArE='} alt='Alternate Profile' onClick={handleImage2Click} />
         </div>
 
-        <p className='text-sm self-center'>
+        <p className="upload-progress-errors">
           {imageError ? (
-            <span className='text-red-700'>Error uploading image (file size must be less than 2 MB)</span>
+            <span>Error uploading image (file size must be less than 2 MB)</span>
           ) : imagePercent > 0 && imagePercent < 100 ? (
-            <span className='text-slate-700'>{`Uploading: ${imagePercent}%`}</span>
+            <span>{`Uploading: ${imagePercent}%`}</span>
           ) : imagePercent === 100 ? (
-            <span className='text-green-400'>Image uploaded successfully</span>
+            <span>Image uploaded successfully</span>
           ) : (
             ''
           )}
         </p>
 
-        <button className='bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80'>Add Pet</button>
+        <button id='submit-button' type="submit">Add Pet</button><br></br><br></br>
         <OAuth />
       </form>
 
-      {error && <p className='text-red-700 mt-5'>{error}</p>}
+      {error && <p>{error}</p>}
     </div>
   );
 }

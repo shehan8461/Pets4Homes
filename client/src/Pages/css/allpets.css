@@ -1,5 +1,6 @@
-.container {
+/* Existing styles */
 
+.details-container {
   margin: 0 auto; /* Center the container */
 }
 
@@ -7,7 +8,7 @@
   border-color: #e5e7eb; /* Light gray border */
   border-style: solid;
   width: 40%;
-margin-left: 50%;
+  margin-left: 50%;
 }
 
 .rounded-lg {
@@ -52,9 +53,7 @@ margin-left: 50%;
 }
 
 .text-2xl {
-  font-size: 1.8rem;
-
-/* Larger font size for pet name */
+  font-size: 1.8rem; /* Larger font size for pet name */
 }
 
 .font-semibold {
@@ -62,8 +61,7 @@ margin-left: 50%;
 }
 
 .mb-2 {
-  margin-bottom: 1.9rem;
-  /* Spacing below the pet name */
+  margin-bottom: 1.9rem; /* Spacing below the pet name */
 }
 
 .text-xl {
@@ -77,15 +75,13 @@ margin-left: 50%;
 
 .image-container img {
   width: 60%;
-  height: 50%;
-   /* Ensure the image covers the container */
+  height: 50%; /* Ensure the image covers the container */
   border-radius: 0.75rem; /* Match the rounded corners */
 }
 
 .details-container {
   flex: 1;
-  padding-left: 0rem; 
-  /* Space between image and details */
+  padding-right: 0rem; /* Space between image and details */
 }
 
 .flex-row {
@@ -94,6 +90,16 @@ margin-left: 50%;
   align-items: center; /* Center items vertically */
   gap: 1.5rem; /* Space between image and details */
 }
-#rs{
+
+#rs {
   color: orange;
+}
+
+/* New style for pet name with border top */
+.pet-name {
+  font-size: 1.8rem; /* Same as text-2xl */
+  font-weight: 700; /* Bold font */
+ /* Spacing below the pet name */
+  
+  padding-top: 1.9rem; /* Add some padding to push the text down from the border */
 }

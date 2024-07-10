@@ -24,7 +24,7 @@ export default function AllDetails() {
 
   return (
     <div className='container mx-auto p-8'>
-      <h2 className='text-center text-4xl font-bold mb-8'>Order History</h2>
+    
       {orders.length > 0 ? (
         <div className='flex flex-col gap-6'>
           {orders.map((order) => (
@@ -39,7 +39,7 @@ export default function AllDetails() {
                   )}
                 </div>
                 <div className='details-container'>
-                  <p className='text-2xl font-bold mb-2'>{order.petname}</p>
+                  <p className='pt-1 text-2xl font-bold mb-2 '>{order.petname}</p><br></br>
                   <p id="rs"><span className='font-semibold' >Rs </span> {order.price}</p>
       
                 

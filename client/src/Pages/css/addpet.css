@@ -1,0 +1,72 @@
+/* addpet.css */
+
+/* Form Container */
+.add-pet-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-top: 4%;
+  }
+  
+  /* Form Inputs */
+  .add-pet-container input[type="text"],
+  .add-pet-container input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* File Input Styling */
+  .add-pet-container input[type="file"] {
+    display: none;
+  }
+  
+  .add-pet-container .upload-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .add-pet-container .upload-button:hover {
+    background-color: #45a049;
+  }
+  
+  .add-pet-container .upload-progress {
+    margin-top: 8px;
+  }
+  
+  .add-pet-container img {
+    width: 50px; /* Adjust size as needed */
+    height: 50px; /* Adjust size as needed */
+    margin: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .add-pet-container #submit-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 12px 20px;
+    margin-top: 16px;
+    cursor: pointer;
+  }
+  
+  .add-pet-container #submit-button:hover {
+    background-color: #0056b3;
+  }
+  .upload-progress-errors{
+    color: rgb(19, 5, 150);
+  }
+  
