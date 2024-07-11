@@ -1,105 +1,140 @@
-/* Existing styles */
-
-.details-container {
-  margin: 0 auto; /* Center the container */
-}
-
-.border {
-  border-color: #e5e7eb; /* Light gray border */
-  border-style: solid;
+/* Container for all ads */
+.all-ads {
   width: 40%;
-  margin-left: 50%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 5%;
 }
 
-.rounded-lg {
-  border-radius: 0.75rem; /* Larger border radius for rounded corners */
+/* Search bar container */
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-.p-6 {
-  padding: 1.5rem;
-  /* Generous padding for better spacing */
+.search input {
+  width: 18%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-right: 10px;
+  position: absolute;
+  top:17%;
+  left:60%
 }
 
-.shadow-lg {
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
+.search button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: absolute;
+  top:17%;
+  left:80%
 }
 
-.text-center {
-  text-align: center; /* Center-aligned text */
+.search button:hover {
+  background-color: #0056b3;
 }
 
-.text-4xl {
-  font-size: 2.25rem; /* Larger font size for the heading */
+/* Ads container */
+.a-ad {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.font-bold {
-  font-weight: 700; /* Bold font */
+/* Individual ad container */
+.ad-with-photo-name-price {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex; /* Added to use flexbox */
+  overflow: hidden;
+  position: relative; /* Added for positioning */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.mb-8 {
-  margin-bottom: 4rem; /* Spacing below the heading */
+.ad-with-photo-name-price:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
-.flex {
-  display: flex; /* Flexbox layout */
-}
-
-.flex-col {
-  flex-direction: column; /* Vertical stacking */
-}
-
-.gap-6 {
-  gap: 1.9rem; /* Space between flex items */
-}
-
-.text-2xl {
-  font-size: 1.8rem; /* Larger font size for pet name */
-}
-
-.font-semibold {
-  font-weight: 600; /* Semi-bold font for labels */
-}
-
-.mb-2 {
-  margin-bottom: 1.9rem; /* Spacing below the pet name */
-}
-
-.text-xl {
-  font-size: 1.35rem; /* Larger font size for "no orders" message */
-}
-
-/* New styles for image and details positioning */
+/* Image container within an ad */
 .image-container {
-  flex: 0 0 170px; /* Fixed width for the image container */
+  width: 40%; /* Adjusted width for image */
+  height: 180px;
+  overflow: hidden;
+  flex-shrink: 0; /* Prevents image from shrinking */
+  position: relative;
 }
 
 .image-container img {
-  width: 60%;
-  height: 50%; /* Ensure the image covers the container */
-  border-radius: 0.75rem; /* Match the rounded corners */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
+/* Details container within an ad */
 .details-container {
-  flex: 1;
-  padding-right: 0rem; /* Space between image and details */
-}
-
-.flex-row {
+  padding: 15px;
+  flex-grow: 1; /* Allows details container to grow */
   display: flex;
-  flex-direction: row;
-  align-items: center; /* Center items vertically */
-  gap: 1.5rem; /* Space between image and details */
+  flex-direction: column;
+  justify-content: flex-start; /* Adjusted for top alignment */
+  position: relative; /* Added for positioning */
 }
 
-#rs {
-  color: orange;
+.details-container .pet-name {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  text-align: center; /* Centered pet name */
+  position: absolute; /* Positioned absolutely */
+  top: 10px; /* Adjusted for top positioning */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* New style for pet name with border top */
-.pet-name {
-  font-size: 1.8rem; /* Same as text-2xl */
-  font-weight: 700; /* Bold font */
- /* Spacing below the pet name */
-  
-  padding-top: 1.9rem; /* Add some padding to push the text down from the border */
+.details-container #pet-price {
+  font-size: 18px;
+  color: #007bff;
+  font-weight: 500;
+  text-align: center; /* Centered pet price */
+  position: absolute; /* Positioned absolutely */
+  bottom: 10px; /* Adjusted for bottom positioning */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* No matching orders message */
+.text-center {
+  text-align: center;
+}
+
+.text-xl {
+  font-size: 24px;
+  font-weight: 600;
+  color: #777;
 }

@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import './css/allpets.css'
+import './css/allpets.css';
 
 export default function AllDetails() {
   const [orders, setOrders] = useState([]);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [filterQuery, setFilterQuery] = useState('');
 
   const fetchOrders = async () => {
     try {
@@ -22,34 +24,53 @@ export default function AllDetails() {
     fetchOrders();
   }, []);
 
+  const handleSearch = () => {
+    setFilterQuery(searchQuery);
+  };
+
+  const filteredOrders = orders.filter((order) =>
+    order.petname.toLowerCase().includes(filterQuery.toLowerCase())
+  );
+
   return (
-    <div className='container mx-auto p-8'>
-    
-      {orders.length > 0 ? (
-        <div className='flex flex-col gap-6'>
-          {orders.map((order) => (
+    <div className='all-ads'>
+      <div className='search'>
+        <input
+          type='text'
+          placeholder='Search by pet name'
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          className='border p-2 rounded mb-4'
+        />
+        <button onClick={handleSearch}>Search</button>
+      </div>
+      {filteredOrders.length > 0 ? (
+        <div className='a-ad'>
+          {filteredOrders.map((order) => (
             <Link to={`/onepet/${order._id}`} key={order.itemId}>
-              <div className='border rounded-lg p-6 shadow-lg flex-row'>
+              <div className='ad-with-photo-name-price'>
                 <div className='image-container'>
                   {order.profilePicture && (
-                    <img src={order.profilePicture} alt="Profile" />
-                  )}<br></br>
+                    <img src={order.profilePicture} alt='Profile' />
+                  )}
+                  <br />
                   {order.alternateProfilePicture && (
-                    <img src={order.alternateProfilePicture} alt="Alternate Profile" />
+                    <img src={order.alternateProfilePicture} alt='Alternate Profile' />
                   )}
                 </div>
                 <div className='details-container'>
-                  <p className='pt-1 text-2xl font-bold mb-2 '>{order.petname}</p><br></br>
-                  <p id="rs"><span className='font-semibold' >Rs </span> {order.price}</p>
-      
-                
+                  <p className='pet-name'>{order.petname}</p>
+                  <br />
+                  <p id='pet-price'>
+                    <span>Rs </span> {order.price}
+                  </p>
                 </div>
               </div>
             </Link>
           ))}
         </div>
       ) : (
-        <p className='text-center text-xl'>You have no orders yet!</p>
+        <p className='text-center text-xl'>No matching orders found!</p>
       )}
     </div>
   );
