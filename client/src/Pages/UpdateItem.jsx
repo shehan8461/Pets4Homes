@@ -1,7 +1,7 @@
 import {useEffect, useState,useRef} from 'react'
 import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import './css/updateUser.css';
+import './css/updateitem.css';
 import { app } from '../firebase';
 import { useSelector } from 'react-redux';
 import { getStorage, uploadBytesResumable, ref, getDownloadURL } from 'firebase/storage';
@@ -161,10 +161,10 @@ function UpdateUser(){
 
     <div className='flex justify-center items-center gap-4'>
           <button type="button" onClick={handleImage1Click} className="cursor-pointer bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-            Upload Profile Picture
+            Upload First Picture
           </button>
           <button type="button" onClick={handleImage2Click} className="cursor-pointer bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-            Upload Alternate Profile Picture
+            Upload Alternate  Picture
           </button>
         </div>
 
@@ -181,7 +181,7 @@ function UpdateUser(){
 
 
   
-    <button onClick={handleUpdate}>Update User Details</button><br></br> <br></br> 
+    <button className='update-btn' onClick={handleUpdate}>Update Pet Details</button><br></br> <br></br> 
 
  
         </div>
