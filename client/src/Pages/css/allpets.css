@@ -28,7 +28,35 @@
   top:17%;
   left:60%
 }
+.post-ad-btn {
+  text-align: center;
+  margin-top: 20px;
+}
 
+.post-ad-button {
+  background-color: #ac9b08; /* Primary color */
+  color: #ffffff; /* White text */
+  padding: 10px 14px;
+  font-size: 15px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px; /* Rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  position: absolute;
+  top:17%;
+  left:20%
+}
+
+.post-ad-button:hover {
+  background-color: #050c29; /* Darker shade on hover */
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+.post-ad-button:active {
+  background-color: #e9ec0a; /* Even darker shade on click */
+  transform: translateY(0); /* Reset lift on click */
+}
 .search button {
   padding: 10px 20px;
   font-size: 16px;

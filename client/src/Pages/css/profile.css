@@ -98,7 +98,7 @@
     color: #ff4d4d;
     cursor: pointer;
     transition: color 0.3s ease;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
   
   .user-profile-delete-button:hover,
@@ -111,7 +111,7 @@
     color: #007bff;
     cursor: pointer;
     transition: color 0.3s ease;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
   
   .navigate-button-additem:hover,

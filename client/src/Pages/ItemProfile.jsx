@@ -80,7 +80,8 @@ export default function ItemProfile() {
 
   return (
     <div className='table-auto'>
-      <h2 className='my-7 text-center font-semibold text-3xl'>Pet Details</h2>
+   <h2 className="my-8 text-center font-bold text-4xl text-gray-800">Pet Information</h2>
+
 
       {orders.length > 0 ? (
         <Table hoverable className='shadow-md'>
@@ -110,10 +111,10 @@ export default function ItemProfile() {
                 <Table.Cell>
                   <div className="flex gap-2">
                     {order.profilePicture && (
-                      <img src={order.profilePicture} alt="Profile" className="h-10 w-10 object-cover rounded" />
+                      <img src={order.profilePicture} alt="Profile" className="h-20 w-20 object-cover rounded" />
                     )}
                     {order.alternateProfilePicture && (
-                      <img src={order.alternateProfilePicture} alt="Alternate Profile" className="h-10 w-10 object-cover rounded" />
+                      <img src={order.alternateProfilePicture} alt="Alternate Profile" className="h-20 w-20 object-cover rounded" />
                     )}
                   </div>
                 </Table.Cell>

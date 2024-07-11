@@ -34,6 +34,11 @@ export default function AllDetails() {
 
   return (
     <div className='all-ads'>
+     <div class="post-ad-btn">
+  <a href="/additem" class="post-ad-button">
+    Post Free Ad
+  </a>
+</div>
       <div className='search'>
         <input
           type='text'
