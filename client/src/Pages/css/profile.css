@@ -1,0 +1,133 @@
+/* Profile.css */
+
+.user-profile {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: #dfdbdb;
+    border-radius: 8px;
+    margin-top: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .user-profile-name {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  .user-profile-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .user-profile-form input[type="file"] {
+    display: none;
+  }
+  
+  .user-profile img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    border: 2px solid #007bff;
+    transition: border 0.3s ease;
+  }
+  
+  .user-profile img:hover {
+    border: 2px solid #0056b3;
+  }
+  
+  .user-profile-emage.uploading.error span {
+    color: red;
+    font-size: 0.875rem;
+  }
+  
+  .user-profile-emage span {
+    font-size: 0.875rem;
+    color: #333;
+  }
+  
+  .user-profile-username,
+  .user-profile-email,
+  .user-profile-password {
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+  }
+  
+  .user-profile-username:focus,
+  .user-profile-email:focus,
+  .user-profile-password:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  .user-profile-form button {
+    padding: 0.75rem;
+    font-size: 1rem;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .user-profile-form button:hover {
+    background: #0056b3;
+  }
+  
+  .flex {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+  }
+  
+  .user-profile-delete-button,
+  .user-profile-signout-button {
+    color: #ff4d4d;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    font-size: 1.3rem;
+  }
+  
+  .user-profile-delete-button:hover,
+  .user-profile-signout-button:hover {
+    color: #b30000;
+  }
+  
+  .navigate-button-additem,
+  .my-items-button {
+    color: #007bff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    font-size: 1.3rem;
+  }
+  
+  .navigate-button-additem:hover,
+  .my-items-button:hover {
+    color: #0056b3;
+  }
+  
+  .user-profile-errors-button {
+    margin-top: 1rem;
+    color: red;
+    font-size: 1.5rem;
+  }
+  
+  .user-profile-update-success-button {
+    margin-top: 1rem;
+    color: green;
+    font-size: 1.5rem;
+  }
+  

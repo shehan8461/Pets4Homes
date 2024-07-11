@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import {getStorage, uploadBytesResumable,ref, getDownloadURL} from 'firebase/storage'
 import {app} from '../firebase';
 import { useDispatch } from 'react-redux';
+import './css/profile.css'
 import { updateUserStart,updateUserFailure, updateUserSuccess, deleteUserStart,deleteUserSuccess,deleteUserFailure, signout } from '../redux/User/userSlice';
 
 
@@ -113,9 +114,9 @@ export default function Profile() {
   }
   return (
 
-    <div className='p-3 max-w-lg mx-auto'>
-      <h1 className='text-3xl font-semibold text-center my-7'>Profile</h1>
-      <form  onSubmit={handleSubmit}className='flex flex-col gap-4' >
+    <div className='user-profile'>
+      <h1 className='user-profile-name'>Profile</h1>
+      <form  onSubmit={handleSubmit}className='user-profile-form' >
         <input type='file' ref={fileRef} hidden accept='image/*' onChange={(e)=>setImage(e.target.files[0])}></input>
 
           {/*allow read;
@@ -123,38 +124,38 @@ export default function Profile() {
                 request.resource.size < 2 * 1024 * 1024 &&
                 request.resource.contentType.matches('image/.*')*/}
 
-      <img src={formData.profilePicture||currentUser.profilePicture} alt='profile' className='h-24 w-24 self-center cursor-pointer object-cover border border-gray-300'
+      <img src={formData.profilePicture||currentUser.profilePicture} alt='profile' className=''
 
       onClick={()=>fileRef.current.click()}></img>
 
-      <p className='text-sm self-center'>
+      <p className='user-profile-emage uploading error'>
             {imageError ?(
-              <span className='text-red-700'>Error uploading image (file size must be less than 2 MB)</span>
+              <span className=''>Error uploading image (file size must be less than 2 MB)</span>
             ):imagePercent>0&&imagePercent<100?(
-              <span className='text-slate-700'>{`uploading:${imagePercent} %`}</span>
+              <span className=''>{`uploading:${imagePercent} %`}</span>
             ):imagePercent===100?(
-              <span className='text-green-400'>Image uploaded successfully</span>
+              <span className=''>Image uploaded successfully</span>
             ):(
               ''
             )}
 
       </p>
 
-      <input defaultValue={currentUser.username} type='text' id='username' placeholder='Username' className='bg-slate-100 rounded-lg p-3' onChange={handlechange}></input>
-      <input defaultValue={currentUser.email} type='email' id='email' placeholder='Email' className='bg-slate-100 rounded-lg p-3' onChange={handlechange}></input>
-      <input type='password' id='password' placeholder='password' className='bg-slate-100 rounded-lg p-3' onChange={handlechange}></input>
+      <input defaultValue={currentUser.username} type='text' id='username' placeholder='Username' className='user-profile-username' onChange={handlechange}></input>
+      <input defaultValue={currentUser.email} type='email' id='email' placeholder='Email' className='user-profile-email' onChange={handlechange}></input>
+      <input type='password' id='password' placeholder='password' className='user-profile-password' onChange={handlechange}></input>
 
-      <button className='bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80'>{loading ? 'loading...':'update'}</button>
+      <button className=''>{loading ? 'loading...':'update'}</button>
 
       </form>
       <div className='flex justify-between mt-5'>
-        <span onClick={handledeleteAccount} className='text-red-700 cursor-pointer'>Delete Account</span>
-        <span onClick={handleSignOut}className='text-red-700 cursor-pointer'>Sign Out</span>
-        <Link className='text-blue-700 cursor-pointer' to='/additem'><li>Add Items</li></Link> 
-        <Link className='text-blue-700 cursor-pointer' to='/items'><li>My Items</li></Link> 
+        <span onClick={handledeleteAccount} className='user-profile-delete-button'>Delete Account</span>
+        <span onClick={handleSignOut}className='user-profile-signout-button'>Sign Out</span>
+        <Link className='navigate-button-additem' to='/additem'><li>Add Items</li></Link> 
+        <Link className='my-items-button' to='/items'><li>My Items</li></Link> 
       </div>
-        <p className='text-red-700 mt-5'>{error && 'Something went wrong'}</p>
-        <p className='text-green-700 mt-5'>{updateSuccess  && 'user  updated successfully'}</p>
+        <p className='user-profile-errors-button'>{error && 'Something went wrong'}</p>
+        <p className='user-profile-update-success-button'>{updateSuccess  && 'user  updated successfully'}</p>
      
     </div>
   )

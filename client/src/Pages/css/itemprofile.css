@@ -63,11 +63,13 @@
   
   .table-auto th {
     background-color: #d3e2f1;
-    font-weight: 600;
+    font-weight: 800;
+    
   }
   
   .table-auto td {
     background-color: #f1f5f9;
+    font-size: large;
   }
   
   .table-auto tbody tr:nth-child(even) {
@@ -167,7 +169,7 @@
   #delete-btn {
     padding: 5px 6px;
     border-radius: 4px;
-    margin-left: 10px;
+    margin-left: 14px;
     font-size: 14px;
     transition: all 0.1s ease;
   }
@@ -180,6 +182,7 @@
   #delete-btn {
     background-color: #e53e3e;
     color: #ffffff;
+    
   }
   
   #edit-btn:hover,
@@ -200,7 +203,7 @@
   }
   
   .modal-content {
-    background-color: #ffffff;
+    background-color: #e7ac9d;
     width: 400px;
     max-width: 90%;
     padding: 20px;
