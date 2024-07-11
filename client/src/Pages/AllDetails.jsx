@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './css/allpets.css';
 
@@ -6,6 +6,14 @@ export default function AllDetails() {
   const [orders, setOrders] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [filterQuery, setFilterQuery] = useState('');
+  const [minPrice, setMinPrice] = useState(1000.00);
+  const [maxPrice, setMaxPrice] = useState(500000.00);
+  const [colorFilter, setColorFilter] = useState('');
+  const [filteredOrders, setFilteredOrders] = useState([]);
+
+  useEffect(() => {
+    fetchOrders();
+  }, []);
 
   const fetchOrders = async () => {
     try {
@@ -15,30 +23,67 @@ export default function AllDetails() {
       }
       const data = await response.json();
       setOrders(data);
+      // Initially set filtered orders to all orders
+      setFilteredOrders(data);
     } catch (error) {
       console.error('Error fetching orders:', error);
     }
   };
 
-  useEffect(() => {
-    fetchOrders();
-  }, []);
-
   const handleSearch = () => {
+    // Filter based on search query
     setFilterQuery(searchQuery);
+    filterOrders(searchQuery, minPrice, maxPrice, colorFilter);
   };
 
-  const filteredOrders = orders.filter((order) =>
-    order.petname.toLowerCase().includes(filterQuery.toLowerCase())
-  );
+  const handlePriceFilter = () => {
+    // Filter based on price range
+    filterOrders(filterQuery, minPrice, maxPrice, colorFilter);
+  };
+
+  const handleColorFilterChange = (e) => {
+    setColorFilter(e.target.value);
+  };
+
+  const filterOrders = (searchQuery, minPrice, maxPrice, colorFilter) => {
+    const updatedOrders = orders.filter((order) =>
+      order.petname.toLowerCase().includes(searchQuery.toLowerCase()) &&
+      order.price >= minPrice && order.price <= maxPrice &&
+      (colorFilter ? order.color.toLowerCase() === colorFilter.toLowerCase() : true)
+    );
+    setFilteredOrders(updatedOrders);
+  };
 
   return (
     <div className='all-ads'>
-     <div class="post-ad-btn">
-  <a href="/additem" class="post-ad-button">
-    Post Free Ad
-  </a>
-</div>
+      <div className='filter-details'>
+        <input
+          type='number'
+          placeholder='Min Price'
+          value={minPrice}
+          min={1000}
+          max={5000}
+          onChange={(e) => setMinPrice(parseFloat(e.target.value))}
+          className='border p-2 rounded mb-4'
+        />
+        <input
+          type='number'
+          placeholder='Max Price'
+          value={maxPrice}
+          min={5000}
+          max={500000}
+          onChange={(e) => setMaxPrice(parseFloat(e.target.value))}
+          className='border p-2 rounded mb-4'
+        />
+        <input
+          type='text'
+          placeholder='Filter by Color'
+          value={colorFilter}
+          onChange={handleColorFilterChange}
+          className='border p-2 rounded mb-4'
+        />
+        <button onClick={handlePriceFilter}>Apply Price Filter</button>
+      </div>
       <div className='search'>
         <input
           type='text'
@@ -69,6 +114,7 @@ export default function AllDetails() {
                   <p id='pet-price'>
                     <span>Rs </span> {order.price}
                   </p>
+                  <p>Color: {order.color}</p>
                 </div>
               </div>
             </Link>
