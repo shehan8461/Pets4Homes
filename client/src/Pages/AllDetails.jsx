@@ -30,10 +30,18 @@ export default function AllDetails() {
     }
   };
 
-  const handleSearch = () => {
-    // Filter based on search query
-    setFilterQuery(searchQuery);
-    filterOrders(searchQuery, minPrice, maxPrice, colorFilter);
+  const handleSearch = (e) => {
+    filterdata(searchQuery)
+  }
+    const filterdata=(searchQuery)=>{
+      const filterData=filteredOrders.filter(customer=>
+        customer.petname.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+      setFilteredOrders(filterData)
+ 
+
+
+   
   };
 
   const handlePriceFilter = () => {
@@ -92,7 +100,7 @@ export default function AllDetails() {
           onChange={(e) => setSearchQuery(e.target.value)}
           className='border p-2 rounded mb-4'
         />
-        <button onClick={handleSearch}>Search</button>
+        <button onClick={(e)=>handleSearch(e)}>Search</button>
       </div>
       {filteredOrders.length > 0 ? (
         <div className='a-ad'>
